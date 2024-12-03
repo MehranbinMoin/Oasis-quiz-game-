@@ -35,7 +35,7 @@ Question 4: What city in the the UK are the band from?
     c. Brighton
     d. Nottinghamshire
 
-Question 5: What fruit did Liam throw at Noel during their fight in 2009?
+Question 5: What fruit did Liam throw at Noel during their famous fight in 2009?
     a. Apple
     b. Pineapple
     c. Watermelon
@@ -45,7 +45,51 @@ Question 5: What fruit did Liam throw at Noel during their fight in 2009?
 
 /*-------------------------------- Constants --------------------------------*/
 
+const questions = [
 
+    {
+        question: "What is the title of Oasis' first single?"
+        a: "Definitely Maybe"
+        b: "Supersonic"
+        c: "Live Forever"
+        d: "I am the Walrus"
+        correct: "b"
+    }
+    {
+        question: "Which two members of the band are brothers?"
+        a: "Paul and Liam"
+        b: "Paul and Noel"
+        c: "Noel and Liam"
+        d: "Alan and Liam"
+        correct: "c"
+    }
+    {
+        question: "What is rhythm guitarist, Paul Aurthirs', nickname?"
+        a: "Ringo"
+        b: "Guigsy"
+        c: "Paulie"
+        d: "Bonehead"
+        correct: "d"
+    }
+    {
+        question: "What city in the the UK are the band from?"
+        a: "Manchester"
+        b: "Leeds"
+        c: "Brighton"
+        d: "Nottinghamshire"
+        correct: "a"
+    }
+    {
+        question: "What fruit did Liam throw at Noel during their famous fight in 2009?"
+        a: "Apple"
+        b: "Pineapple"
+        c: "Watermelon"
+        d: "Plum"
+        correct: "d"
+    }
+
+
+]
 
 /*---------------------------- Variables (state) ----------------------------*/
 
