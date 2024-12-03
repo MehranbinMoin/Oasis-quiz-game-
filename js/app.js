@@ -9,6 +9,38 @@
     6a. If you won the game, you'll hear a song from Oasis.
     6b. If you lose, the prompt will ask you to 'Start over' and you'll hear a song from Blur.
 
+-----Questions that will appear on quiz-----
+
+Question 1: What is the title of Oasis' first single?
+    a. Definitely Maybe
+    b. Supersonic
+    c. Live Forever
+    d. I am the Walrus
+
+Question 2: Which two members of the band are brothers?
+    a. Paul and Liam
+    b. Paul and Noel
+    c. Noel and Liam
+    d. Alan and Liam
+
+Question 3: What is rhythm guitarist, Paul Aurthirs', nickname?
+    a. Ringo
+    b. Guigsy
+    c. Paulie
+    d. Bonehead
+
+Question 4: What city in the the UK are the band from?
+    a. Manchester
+    b. Leeds
+    c. Brighton
+    d. Nottinghamshire
+
+Question 5: What fruit did Liam throw at Noel during their fight in 2009?
+    a. Apple
+    b. Pineapple
+    c. Watermelon
+    d. Plum
+
 */
 
 /*-------------------------------- Constants --------------------------------*/
