@@ -47,9 +47,25 @@ ul li label {
     cursor: pointer;
 }
 
-button {
+.nextButton {
     background-color: rgb(173, 173, 173);
     color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    font-size: 15px;
+    border: none;
+    display: block;
+    width: 500px;
+    height: 30px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.startButton {
+    background-color: rgb(173, 173, 173);
+    color:red;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 20px;
