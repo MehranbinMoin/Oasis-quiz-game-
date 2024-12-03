@@ -114,10 +114,12 @@ let score = 0
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
 const questionElement = document.getElementById('questions');
+const inputOptions = document.getElementsByClassName('answer')
 const aLabel = document.getElementById('a_content');
 const bLabel = document.getElementById('b_content');
 const cLabel = document.getElementById('c_content');
 const dLabel = document.getElementById('d_content');
+
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -126,7 +128,16 @@ const dLabel = document.getElementById('d_content');
 
 function startGame() {
     startButton.style.display = 'none';
-    nextButton.style.display = 'inline';
+    nextButton.style.display = 'flex';
+    questionElement.style.display = 'inLine'
+    aLabel.style.display = 'inline'
+    bLabel.style.display = 'inline'
+    cLabel.style.display = 'inline'
+    dLabel.style.display = 'inline'
+    inputOptions[0].style.display = 'inline'
+    inputOptions[1].style.display = 'inline'
+    inputOptions[2].style.display = 'inline'
+    inputOptions[3].style.display = 'inline'
     displayQuestion();
 }
 
@@ -144,11 +155,66 @@ function displayQuestion () {
 
 //Track answers
 
-//Display result
+function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer) {
+        const answer = selectedAnswer.id;
+        if (answer === questions[currentQuestion].correct) {
+            score++;
+        }
+    }
+}
+
+//Display next question
+
+function nextQuestion() {
+    checkAnswer();
+    currentQuestion++
+    if(currentQuestion < questions.length) {
+        displayQuestion()
+    } else {
+        endGame ();
+    }
+}
+
+//End game & display result
+
+function endGame () {
+    nextButton.style.display = 'none';
+    const resultMessage = document.createElement('p')
+    if(score >= 4) {
+        resultMessage.textContent = "You've won tickets to the Oasis 2025 reunion!"
+    } else {
+        resultMessage.textContent = "You Silly Billy!! Try again."
+    }
+
+    document.querySelector('game-container').appendChild(resultMessage);
+}
+
+//Intro screen that displays only 'Start' button
+
+function introScreen () {
+    questionElement.style.display = 'none'
+    aLabel.style.display = 'none'
+    bLabel.style.display = 'none'
+    cLabel.style.display = 'none'
+    dLabel.style.display = 'none'
+    nextButton.style.display = 'none'
+    inputOptions[0].style.display = 'none'
+    inputOptions[1].style.display = 'none'
+    inputOptions[2].style.display = 'none'
+    inputOptions[3].style.display = 'none'
+
+}
+
+window.onload = introScreen
 
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+//Think about the buttons that need to be clicked to get the game started and also progress through to the end of the game
 
+startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', nextQuestion)
 

@@ -56,11 +56,13 @@ ul li label {
     font-style: italic;
     font-size: 15px;
     border: none;
-    display: block;
     width: 500px;
     height: 30px;
     cursor: pointer;
     transition-duration: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .startButton {
@@ -68,15 +70,22 @@ ul li label {
     color:red;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
     font-style: italic;
-    font-size: 15px;
+    font-size: 20px;
     border: none;
-    display: block;
-    width: 500px;
-    height: 30px;
+    width: auto;
+    height: auto;
     cursor: pointer;
     transition-duration: 0.4s;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover {
