@@ -72,7 +72,7 @@ const questions = [
         correct: "c"
     },
     {
-        question: "What is rhythm guitarist, Paul Aurthirs', nickname?",
+        question: "What is rhythm guitarist, Paul Arthurs', nickname?",
         a: "Ringo",
         b: "Guigsy",
         c: "Paulie",
@@ -192,14 +192,20 @@ function endGame() {
     inputOptions[2].style.display = 'none'
     inputOptions[3].style.display = 'none'
     nextButton.style.display = 'none';
+    const totalQuestions = questions.length;
+    const incorrectAnswers = totalQuestions - score;
     const resultMessage = document.createElement('p')
     if(score >= 4) {
-        resultMessage.textContent = "You've won tickets to the Oasis 2025 reunion!"
+        resultMessage.textContent = `You've won tickets to the Oasis 2025 reunion! You got ${score} correct and ${incorrectAnswers} wrong.`
     } else {
-        resultMessage.textContent = "You Silly Billy!! Try again."
+        resultMessage.textContent = `You Silly Billy!! You got ${incorrectAnswers} wrong. Try again.`
     }
-    document.querySelector('.game-container').appendChild(resultMessage);
-    disableAnswers()
+    const resultContainer = document.createElement('div');
+        resultContainer.classList.add('result');
+        resultContainer.appendChild(resultMessage)
+        const gameContainer = document.querySelector('.game-container')
+        gameContainer.innerHTML = '';
+        gameContainer.appendChild(resultContainer);
 }
 
 function disableAnswers() {
@@ -228,7 +234,6 @@ function introScreen () {
 }
 
 window.onload = introScreen
-
 
 
 /*----------------------------- Event Listeners -----------------------------*/
