@@ -19,8 +19,9 @@ body {
     background-color:white;
     border-radius: 15px;
     box-shadow: 0 0 2px 2px black; 
-    width: 500px;
-    overflow: hidden ;
+    overflow: hidden;
+    position: relative;
+    padding: 0px;
 }
 
 .header {
