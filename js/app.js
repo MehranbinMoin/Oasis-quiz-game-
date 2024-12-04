@@ -112,6 +112,7 @@ let score = 0
 //Think about the cached elements as ALL the different objects that need to be defined on the quiz itself. 
 
 const startButton = document.getElementById('start');
+const gameContainer = document.getElementsByClassName('game-container')
 const nextButton = document.getElementById('next');
 const questionElement = document.getElementById('questions');
 const inputOptions = document.getElementsByClassName('answer')
@@ -129,7 +130,7 @@ const dLabel = document.getElementById('d_content');
 function startGame() {
     startButton.style.display = 'none';
     nextButton.style.display = 'flex';
-    questionElement.style.display = 'inLine'
+    questionElement.style.display = 'block'
     aLabel.style.display = 'inline'
     bLabel.style.display = 'inline'
     cLabel.style.display = 'inline'
@@ -173,13 +174,23 @@ function nextQuestion() {
     if(currentQuestion < questions.length) {
         displayQuestion()
     } else {
-        endGame ();
+        endGame();
     }
 }
 
 //End game & display result
 
-function endGame () {
+function endGame() {
+    questionElement.style.display = 'none'
+    aLabel.style.display = 'none'
+    bLabel.style.display = 'none'
+    cLabel.style.display = 'none'
+    dLabel.style.display = 'none'
+    nextButton.style.display = 'none'
+    inputOptions[0].style.display = 'none'
+    inputOptions[1].style.display = 'none'
+    inputOptions[2].style.display = 'none'
+    inputOptions[3].style.display = 'none'
     nextButton.style.display = 'none';
     const resultMessage = document.createElement('p')
     if(score >= 4) {
@@ -187,13 +198,22 @@ function endGame () {
     } else {
         resultMessage.textContent = "You Silly Billy!! Try again."
     }
+    document.querySelector('.game-container').appendChild(resultMessage);
+    disableAnswers()
+}
 
-    document.querySelector('game-container').appendChild(resultMessage);
+function disableAnswers() {
+    const options = document.querySelectorAll('input[name="answer"]');
+    options.forEach(option => {
+        option.disabled = true;
+    })
 }
 
 //Intro screen that displays only 'Start' button
 
 function introScreen () {
+    const gameContainer = document.querySelector('.game-container')
+    gameContainer.classList.add('intro')
     questionElement.style.display = 'none'
     aLabel.style.display = 'none'
     bLabel.style.display = 'none'
