@@ -1,24 +1,24 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 body {
     background-color: blanchedalmond;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:black;
+    color: black;
     height: 100vh;
     margin: 0;
     overflow: hidden;
 }
 
 .game-container {
-    background-color:white;
+    background-color: white;
     border-radius: 15px;
-    box-shadow: 0 0 2px 2px black; 
+    box-shadow: 0 0 2px 2px black;
     width: 500px;
     padding: 0px;
     position: relative;
@@ -27,7 +27,7 @@ body {
     justify-content: space-between;
     height: auto;
     overflow: hidden;
-   
+
 }
 
 .game-container.result {
@@ -47,7 +47,7 @@ body {
 
 .nextButton {
     background-color: rgb(173, 173, 173);
-    color:black;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 20px;
@@ -72,7 +72,49 @@ body {
 }
 
 .startButton {
-    color:red;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    font-size: 20px;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#topic1 {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    font-size: 20px;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#topic2 {
+    color: red;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 20px;

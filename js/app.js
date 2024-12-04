@@ -54,7 +54,7 @@ Question 5: What fruit did Liam throw at Noel during their famous fight in 2009?
 
 /*-------------------------------- Constants --------------------------------*/
 
-const questions = [
+const generalQuestions = [
     {
         question: "What is the title of Oasis' first single?",
         a: "Definitely Maybe",
@@ -98,6 +98,51 @@ const questions = [
 
 ];
 
+const musicQuestions = [
+    {
+        question: "What is the title of Oasis' first single?",
+        a: "Definitely Maybe",
+        b: "Supersonic",
+        c: "Live Forever",
+        d: "I am the Walrus",
+        correct: "b"
+    },
+    {
+        question: "Which two members of the band are brothers?",
+        a: "Paul and Liam",
+        b: "Paul and Noel",
+        c: "Noel and Liam",
+        d: "Alan and Liam",
+        correct: "c"
+    },
+    {
+        question: "What is rhythm guitarist, Paul Arthurs', nickname?",
+        a: "Ringo",
+        b: "Guigsy",
+        c: "Paulie",
+        d: "Bonehead",
+        correct: "d"
+    },
+    {
+        question: "What city in the the UK are the band from?",
+        a: "Manchester",
+        b: "Leeds",
+        c: "Brighton",
+        d: "Nottinghamshire",
+        correct: "a"
+    },
+    {
+        question: "What fruit did Liam throw at Noel during their famous fight in 2009?",
+        a: "Apple",
+        b: "Pineapple",
+        c: "Watermelon",
+        d: "Plum",
+        correct: "d"
+    },
+
+];
+
+let questions = [];
 
 /*---------------------------- Variables (state) ----------------------------*/
 
@@ -115,19 +160,34 @@ const startButton = document.getElementById('start');
 const gameContainer = document.getElementsByClassName('game-container')
 const nextButton = document.getElementById('next');
 const questionElement = document.getElementById('questions');
+const topicsElement = document.getElementById('topics')
 const inputOptions = document.getElementsByClassName('answer')
 const aLabel = document.getElementById('a_content');
 const bLabel = document.getElementById('b_content');
 const cLabel = document.getElementById('c_content');
 const dLabel = document.getElementById('d_content');
+const topic1Button = document.getElementById('topic1')
+const topic2Button = document.getElementById('topic2')
 
-
+topicsElement.style.display = 'none';
+// topic1.style.display = 'inline'
+// topic2.style.display = 'inline'
 
 /*-------------------------------- Functions --------------------------------*/
 
 //Start game
 
 function startGame() {
+    topicsElement.style.display = 'inline';
+    startButton.style.display = 'none';
+}
+
+function displayTopics(event) {
+    if (event.target.id = 'topic1') {
+        questions = musicQuestions
+    }   else (
+        questions = generalQuestions
+    )
     startButton.style.display = 'none';
     nextButton.style.display = 'flex';
     questionElement.style.display = 'block'
@@ -144,7 +204,8 @@ function startGame() {
 
 //Display current question & answers
 
-function displayQuestion () {
+function displayQuestion() {
+    topicsElement.style.display = 'none'
     const question = questions[currentQuestion];
     questionElement.textContent = question.question;
 
@@ -171,7 +232,7 @@ function checkAnswer() {
 function nextQuestion() {
     checkAnswer();
     currentQuestion++
-    if(currentQuestion < questions.length) {
+    if (currentQuestion < questions.length) {
         displayQuestion()
     } else {
         endGame();
@@ -195,17 +256,17 @@ function endGame() {
     const totalQuestions = questions.length;
     const incorrectAnswers = totalQuestions - score;
     const resultMessage = document.createElement('p')
-    if(score >= 4) {
+    if (score >= 4) {
         resultMessage.textContent = `You've won tickets to the Oasis 2025 reunion! You got ${score} correct and ${incorrectAnswers} wrong.`
     } else {
         resultMessage.textContent = `You Silly Billy!! You got ${incorrectAnswers} wrong. Try again.`
     }
     const resultContainer = document.createElement('div');
-        resultContainer.classList.add('result');
-        resultContainer.appendChild(resultMessage)
-        const gameContainer = document.querySelector('.game-container')
-        gameContainer.innerHTML = '';
-        gameContainer.appendChild(resultContainer);
+    resultContainer.classList.add('result');
+    resultContainer.appendChild(resultMessage)
+    const gameContainer = document.querySelector('.game-container')
+    gameContainer.innerHTML = '';
+    gameContainer.appendChild(resultContainer);
 }
 
 function disableAnswers() {
@@ -217,7 +278,7 @@ function disableAnswers() {
 
 //Intro screen that displays only 'Start' button
 
-function introScreen () {
+function introScreen() {
     const gameContainer = document.querySelector('.game-container')
     gameContainer.classList.add('intro')
     questionElement.style.display = 'none'
@@ -242,4 +303,7 @@ window.onload = introScreen
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', nextQuestion)
+topic1Button.addEventListener('click', displayTopics)
+topic2Button.addEventListener('click', displayTopics)
+
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,46 @@
     <script defer src="./js/app.js"></script>
     <title>Oasis Quiz Game</title>
 </head>
+
 <body>
-    
-<div class="game-container" id="quiz">
-    <div class="header">
-        <h3 id="questions">Questions</h3>
-        <ul>
-            <li>
-                <input type="radio" name="answer" id="a" class="answer">
-                <label for="a" id="a_content">Answer</label>
-            </li>
 
-            <li>
-                <input type="radio" name="answer" id="b" class="answer">
-                <label for="b" id="b_content">Answer</label>
-            </li>
+    <div class="game-container" id="quiz">
+        <div class="header">
+            <h3 id="questions">Questions</h3>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_content">Answer</label>
+                </li>
 
-            <li>
-                <input type="radio" name="answer" id="c" class="answer">
-                <label for="c" id="c_content">Answer</label>
-            </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_content">Answer</label>
+                </li>
 
-            <li>
-                <input type="radio" name="answer" id="d" class="answer">
-                <label for="d" id="d_content">Answer</label>
-            </li>
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_content">Answer</label>
+                </li>
 
-        </ul>
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_content">Answer</label>
+                </li>
+
+            </ul>
+        </div>
+
+        <button id="start" class="startButton">Start</button>
+        <div id="topics">
+            <button id="topic1">Music</button>
+            <button id="topic2">General</button>
+        </div>
+        <button id="next" class="nextButton">Next</button>
+
     </div>
-    
-    <button id="start" class="startButton">Start</button>
-    <button id="next" class="nextButton">Next</button>
-
-</div>
 
 
 </body>
+
 </html>
