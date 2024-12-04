@@ -56,12 +56,12 @@ Question 5: What fruit did Liam throw at Noel during their famous fight in 2009?
 
 const generalQuestions = [
     {
-        question: "What is the title of Oasis' first single?",
-        a: "Definitely Maybe",
-        b: "Supersonic",
-        c: "Live Forever",
-        d: "I am the Walrus",
-        correct: "b"
+        question: "What contemporary UK band does Oasis have a heated rivalry with?",
+        a: "U2",
+        b: "The Verve",
+        c: "Radiohead",
+        d: "Blur",
+        correct: "d"
     },
     {
         question: "Which two members of the band are brothers?",
@@ -108,36 +108,36 @@ const musicQuestions = [
         correct: "b"
     },
     {
-        question: "Which two members of the band are brothers?",
-        a: "Paul and Liam",
-        b: "Paul and Noel",
-        c: "Noel and Liam",
-        d: "Alan and Liam",
+        question: "Which Oasis song did Liam Gallagher hate because he thought it sounded like raggae?",
+        a: "Don't Look Back in Anger",
+        b: "Wonderwall",
+        c: "Cigarettes and Alcohol",
+        d: "She's Electric",
+        correct: "b"
+    },
+    {
+        question: "What was Noel's main inspiration for writing 'Don't Go Away?",
+        a: "Liam threatened to leave the band.",
+        b: "Noel's girlfriend of 3 years just left him.",
+        c: "He wrote it for Bonehead's mum, who was just diagnosed with cancer.",
+        d: "Due to Liam's failing relationship with their mother.",
         correct: "c"
     },
     {
-        question: "What is rhythm guitarist, Paul Arthurs', nickname?",
-        a: "Ringo",
-        b: "Guigsy",
-        c: "Paulie",
-        d: "Bonehead",
-        correct: "d"
+        question: "Who is Sally in the hit song 'Don't Look Back in Anger'?",
+        a: "She's Noel's 5th grade teacher",
+        b: "She's Noel's daughter.",
+        c: "She doesn't exist -- she's a figment of Noel's imagination.",
+        d: "She's Noel's hairdresser.",
+        correct: "c"
     },
     {
-        question: "What city in the the UK are the band from?",
-        a: "Manchester",
-        b: "Leeds",
-        c: "Brighton",
-        d: "Nottinghamshire",
+        question: "Where was the iconic 1995 album 'Morning Glory' recorded?",
+        a: "Rockfield Studios",
+        b: "Abbey Road Studios",
+        c: "Eden Studios",
+        d: "Headley Grange",
         correct: "a"
-    },
-    {
-        question: "What fruit did Liam throw at Noel during their famous fight in 2009?",
-        a: "Apple",
-        b: "Pineapple",
-        c: "Watermelon",
-        d: "Plum",
-        correct: "d"
     },
 
 ];
@@ -166,28 +166,26 @@ const aLabel = document.getElementById('a_content');
 const bLabel = document.getElementById('b_content');
 const cLabel = document.getElementById('c_content');
 const dLabel = document.getElementById('d_content');
-const topic1Button = document.getElementById('topic1')
-const topic2Button = document.getElementById('topic2')
+const topic1Button = document.getElementById('topic1');
+const topic2Button = document.getElementById('topic2');
 
 topicsElement.style.display = 'none';
-// topic1.style.display = 'inline'
-// topic2.style.display = 'inline'
 
 /*-------------------------------- Functions --------------------------------*/
 
 //Start game
 
 function startGame() {
-    topicsElement.style.display = 'inline';
+    topicsElement.style.display = 'flex';
     startButton.style.display = 'none';
 }
 
 function displayTopics(event) {
-    if (event.target.id = 'topic1') {
-        questions = musicQuestions
-    }   else (
-        questions = generalQuestions
-    )
+    if (event.target.id === 'topic1') {
+        questions = musicQuestions;
+    }   else {
+        questions = generalQuestions;
+    }
     startButton.style.display = 'none';
     nextButton.style.display = 'flex';
     questionElement.style.display = 'block'
@@ -256,10 +254,13 @@ function endGame() {
     const totalQuestions = questions.length;
     const incorrectAnswers = totalQuestions - score;
     const resultMessage = document.createElement('p')
+    let isWinner = false;
     if (score >= 4) {
         resultMessage.textContent = `You've won tickets to the Oasis 2025 reunion! You got ${score} correct and ${incorrectAnswers} wrong.`
+        isWinner = true;
     } else {
         resultMessage.textContent = `You Silly Billy!! You got ${incorrectAnswers} wrong. Try again.`
+        isWinner = false;
     }
     const resultContainer = document.createElement('div');
     resultContainer.classList.add('result');
@@ -267,6 +268,20 @@ function endGame() {
     const gameContainer = document.querySelector('.game-container')
     gameContainer.innerHTML = '';
     gameContainer.appendChild(resultContainer);
+    playSound(isWinner);
+}
+
+//Create a function that plays one song if the player wins and another song if the player loses.
+
+function playSound (isWinner) {
+    const winSound = document.getElementById('winSong');
+    const loseSound = document.getElementById('loseSong');
+
+    if (isWinner) {
+        winSound.play();
+    } else {
+        loseSound.play();
+    }
 }
 
 function disableAnswers() {
@@ -275,6 +290,7 @@ function disableAnswers() {
         option.disabled = true;
     })
 }
+
 
 //Intro screen that displays only 'Start' button
 
