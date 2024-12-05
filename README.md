@@ -9,7 +9,7 @@ Screenshots of the UX/UI:
   ![Game win result message](https://github.com/user-attachments/assets/10ec76ce-eb5f-4242-bfc6-50940c7a83ee)
   ![Game loss result message](https://github.com/user-attachments/assets/cefdc26e-5ec5-407c-9315-b4ddf81474ec)
 
-Link to deployed game:
+Link to deployed game: https://mehranbinmoin.github.io/Oasis-quiz-game-/ 
 
 Technologies used: HTML, CSS, JavaScript
 
