@@ -185,7 +185,7 @@ function startGame() {
 function displayTopics(event) {
     if (event.target.id === 'topic1') {
         questions = musicQuestions;
-    }   else {
+    } else {
         questions = generalQuestions;
     }
     startButton.style.display = 'none';
@@ -277,7 +277,7 @@ function endGame() {
 
 //Create a function that plays an Oasis song if the player wins and a Blur song if the player loses.
 
-function playSound (isWinner) {
+function playSound(isWinner) {
     const winSound = document.getElementById('winSong');
     const loseSound = document.getElementById('loseSong');
 
@@ -327,7 +327,7 @@ function introScreen() {
     inputOptions[1].style.display = 'none'
     inputOptions[2].style.display = 'none'
     inputOptions[3].style.display = 'none'
-    
+
 
 }
 

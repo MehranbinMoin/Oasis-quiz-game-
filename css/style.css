@@ -17,13 +17,13 @@ body {
 
 .oasis-logo {
     position: absolute;
-    margin: 0px, 0px, -20px, 0px;
     top: 20px;
+    margin-top: -15px;
     left: 50%;
     transform: translateX(-50%);
     width: 75px;
     height: auto;
-    z-index: 10;
+    z-index: 1;
 }
 
 .game-container {
@@ -32,10 +32,10 @@ body {
     border-radius: 1px;
     box-shadow: 0 0 2px 2px black;
     width: 500px;
-    padding: 20px;
+    padding: 70px 20px 20px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: auto;
     overflow: hidden;
 
@@ -44,7 +44,7 @@ body {
 .instructions {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     font-size: 10px;
 
@@ -127,7 +127,8 @@ body {
     box-sizing: border-box;
 }
 
-#topic1, #topic2 {
+#topic1,
+#topic2 {
     color: red;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
