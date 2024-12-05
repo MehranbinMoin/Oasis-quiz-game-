@@ -13,7 +13,9 @@ Link to deployed game: https://mehranbinmoin.github.io/Oasis-quiz-game-/
 
 Attributions: 
    Adding audio element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+   
    Adding logo via HTML: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML
+   
    Hoverable buttons (changing button colours on hover): https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_hover
    
 
