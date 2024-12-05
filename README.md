@@ -3,8 +3,8 @@
 **Description of game**: 5-question quiz game on UK rock band, Oasis.
 
 Screenshots of the UX/UI:
+   ![Start screen with instructions](https://github.com/user-attachments/assets/20441de7-8fde-4d5d-afb8-9a426df6df51)
   ![Topics options](https://github.com/user-attachments/assets/40964938-6e34-47f7-9ce7-c2be6219007a)
-  ![Start screen with instructions](https://github.com/user-attachments/assets/20441de7-8fde-4d5d-afb8-9a426df6df51)
   ![Layout of questions and answer choices](https://github.com/user-attachments/assets/92712aa1-7dd9-4f2f-985d-3883f9020996)
   ![Game win result message](https://github.com/user-attachments/assets/10ec76ce-eb5f-4242-bfc6-50940c7a83ee)
   ![Game loss result message](https://github.com/user-attachments/assets/cefdc26e-5ec5-407c-9315-b4ddf81474ec)
