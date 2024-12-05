@@ -1,6 +1,6 @@
 **Title of game**: Oasis Quiz Game
 
-5-question quiz game on UK rock band, Oasis.
+**Description of game**: 5-question quiz game on UK rock band, Oasis.
 
 Screenshots of the UX/UI:
   ![Topics options](https://github.com/user-attachments/assets/40964938-6e34-47f7-9ce7-c2be6219007a)
