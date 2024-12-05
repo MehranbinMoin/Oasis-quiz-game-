@@ -213,6 +213,8 @@ function displayQuestion() {
     bLabel.textContent = question.b;
     cLabel.textContent = question.c;
     dLabel.textContent = question.d;
+
+    disableNextButton();
 }
 
 //Track answers
@@ -293,6 +295,22 @@ function disableAnswers() {
     })
 }
 
+function disableNextButton() {
+    nextButton.disabled = true;
+    nextButton.style.cursor = 'not-allowed';
+}
+
+function enableNextButton() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked')
+    if (selectedAnswer) {
+        nextButton.disabled = false;
+        nextButton.style.cursor = 'pointer';
+    }
+}
+
+document.querySelectorAll('input[name="answer"]').forEach((radio) => {
+    radio.addEventListener('change', enableNextButton);
+})
 
 //Intro screen that displays only 'Start' button
 
