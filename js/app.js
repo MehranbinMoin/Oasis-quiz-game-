@@ -142,7 +142,7 @@ const musicQuestions = [
         correct: "b"
     },
     {
-        question: "Which Oasis song did Liam Gallagher hate because he thought it sounded like raggae?",
+        question: "Which Oasis song did Liam Gallagher hate because he thought it sounded like reggae?",
         a: "Don't Look Back in Anger",
         b: "Wonderwall",
         c: "Cigarettes and Alcohol",
