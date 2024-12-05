@@ -161,6 +161,7 @@ const gameContainer = document.getElementsByClassName('game-container')
 const nextButton = document.getElementById('next');
 const questionElement = document.getElementById('questions');
 const topicsElement = document.getElementById('topics')
+const instructionsElement = document.getElementById('instructions')
 const inputOptions = document.getElementsByClassName('answer')
 const aLabel = document.getElementById('a_content');
 const bLabel = document.getElementById('b_content');
@@ -176,6 +177,7 @@ topicsElement.style.display = 'none';
 //Start game
 
 function startGame() {
+    instructionsElement.style.display = 'none';
     topicsElement.style.display = 'flex';
     startButton.style.display = 'none';
 }
@@ -271,7 +273,7 @@ function endGame() {
     playSound(isWinner);
 }
 
-//Create a function that plays one song if the player wins and another song if the player loses.
+//Create a function that plays an Oasis song if the player wins and a Blur song if the player loses.
 
 function playSound (isWinner) {
     const winSound = document.getElementById('winSong');
@@ -307,6 +309,7 @@ function introScreen() {
     inputOptions[1].style.display = 'none'
     inputOptions[2].style.display = 'none'
     inputOptions[3].style.display = 'none'
+    
 
 }
 
