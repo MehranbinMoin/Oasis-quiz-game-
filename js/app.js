@@ -20,17 +20,19 @@
 
 -----Questions that will appear on quiz-----
 
-Question 1: What is the title of Oasis' first single?
-    a. Definitely Maybe
-    b. Supersonic
-    c. Live Forever
-    d. I am the Walrus
+Array 1 general questions:
+
+Question 1: What contemporary UK band does Oasis have a heated rivalry with?
+        a: U2
+        b: The Verve
+        c: Radiohead
+        d: Blur
 
 Question 2: Which two members of the band are brothers?
-    a. Paul and Liam
-    b. Paul and Noel
-    c. Noel and Liam
-    d. Alan and Liam
+        a: Paul and Liam
+        b: Paul and Noel
+        c: Noel and Liam
+        d: Alan and Liam
 
 Question 3: What is rhythm guitarist, Paul Aurthirs', nickname?
     a. Ringo
@@ -49,6 +51,38 @@ Question 5: What fruit did Liam throw at Noel during their famous fight in 2009?
     b. Pineapple
     c. Watermelon
     d. Plum
+
+Array 2 music questions:
+
+Question 1: What is the title of Oasis' first single?
+        a: Definitely Maybe
+        b: Supersonic
+        c: Live Forever
+        d: I am the Walrus
+
+Question 2: Which Oasis song did Liam Gallagher hate because he thought it sounded like raggae?
+        a: Don't Look Back in Anger
+        b: Wonderwall
+        c: Cigarettes and Alcohol
+        d: She's Electric
+
+Question 3: What was Noel's main inspiration for writing 'Don't Go Away?
+        a: Liam threatened to leave the band.
+        b: Noel's girlfriend of 3 years just left him.
+        c: He wrote it for Bonehead's mum, who was just diagnosed with cancer.
+        d: Due to Liam's failing relationship with their mother.
+
+Question 4: Who is Sally in the hit song 'Don't Look Back in Anger'?
+        a: She's Noel's 5th grade teacher
+        b: She's Noel's daughter.
+        c: She doesn't exist -- she's a figment of Noel's imagination.
+        d: She's Noel's hairdresser.
+
+Question 5: Where was the iconic 1995 album 'Morning Glory' recorded?
+        a: Rockfield Studios
+        b: Abbey Road Studios
+        c: Eden Studios
+        d: Headley Grange
 
 */
 
@@ -162,7 +196,7 @@ const nextButton = document.getElementById('next');
 const questionElement = document.getElementById('questions');
 const topicsElement = document.getElementById('topics')
 const instructionsElement = document.getElementById('instructions')
-const inputOptions = document.getElementsByClassName('answer')
+const inputOptions = document.querySelectorAll('.answer')
 const aLabel = document.getElementById('a_content');
 const bLabel = document.getElementById('b_content');
 const cLabel = document.getElementById('c_content');
@@ -205,6 +239,11 @@ function displayTopics(event) {
 //Display current question & answers
 
 function displayQuestion() {
+    console.log(inputOptions);
+    
+    inputOptions.forEach((option) => {
+        option.checked = false;
+    })
     topicsElement.style.display = 'none'
     const question = questions[currentQuestion];
     questionElement.textContent = question.question;
